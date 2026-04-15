@@ -5,31 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend Agenda</title>
     <style>
-        body { font-family: sans-serif; background: #f4f4f9; display: flex; justify-content: center; padding: 20px; }
-        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 400px; width: 100%; }
-        h1 { color: #333; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .day { font-weight: bold; color: #5c67f2; margin-top: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        :root { --primary: #5c67f2; --bg: #f4f4f9; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 450px; width: 100%; }
+        h1 { color: #333; text-align: center; margin-bottom: 25px; font-size: 1.5rem; }
+        .day-label { font-weight: 800; color: var(--primary); margin-top: 25px; margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; border-left: 4px solid var(--primary); padding-left: 10px; }
         ul { list-style: none; padding: 0; }
-        li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
-        .time { color: #888; font-size: 0.9rem; }
+        li { padding: 15px; border-radius: 8px; margin-bottom: 8px; background: #fff; border: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.2s; }
+        li:hover { border-color: var(--primary); }
+        li.done { background: #f9f9f9; opacity: 0.6; }
+        li.done span { text-decoration: line-through; }
+        .time { color: #888; font-size: 0.85rem; font-weight: bold; background: #eee; padding: 4px 8px; border-radius: 6px; }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Weekend Plans 🚀</h1>
+        <h1>Weekend Agenda 🚀</h1>
         
-        <div class="day">Saturday</div>
+        <div class="day-label">Saturday</div>
         <ul>
-            <li><span>Breakfast & Coffee</span> <span class="time">09:00</span></li>
-            <li><span>Morning Hike</span> <span class="time">11:00</span></li>
-            <li><span>Movie Night</span> <span class="time">20:00</span></li>
+            <li onclick="this.classList.toggle('done')"><span>Morning Yoga</span> <span class="time">08:30</span></li>
+            <li onclick="this.classList.toggle('done')"><span>Grocery Run</span> <span class="time">11:00</span></li>
+            <li onclick="this.classList.toggle('done')"><span>Dinner Party</span> <span class="time">19:00</span></li>
         </ul>
 
-        <div class="day">Sunday</div>
+        <div class="day-label">Sunday</div>
         <ul>
-            <li><span>Farmers Market</span> <span class="time">10:00</span></li>
-            <li><span>Read/Relax</span> <span class="time">14:00</span></li>
-            <li><span>Meal Prep</span> <span class="time">17:00</span></li>
+            <li onclick="this.classList.toggle('done')"><span>Sleep In</span> <span class="time">--:--</span></li>
+            <li onclick="this.classList.toggle('done')"><span>Walk in the Park</span> <span class="time">15:00</span></li>
+            <li onclick="this.classList.toggle('done')"><span>Weekly Review</span> <span class="time">21:00</span></li>
         </ul>
     </div>
 </body>
