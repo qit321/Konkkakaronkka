@@ -3,32 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekend Agenda</title>
+    <title>Konkkakaronkka Riga</title>
     <style>
         :root { --primary: #5c67f2; --bg: #f4f4f9; --maps: #ea4335; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; }
-        .card { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 450px; width: 100%; }
-        h1 { color: #333; text-align: center; margin-bottom: 25px; font-size: 1.5rem; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; margin: 0; }
+        .card { background: white; padding: 1.5rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 450px; width: 100%; min-height: 300px; }
+        h1 { color: #333; text-align: center; margin-bottom: 10px; font-size: 1.5rem; }
         .day-label { font-weight: 800; color: var(--primary); margin-top: 25px; margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; border-left: 4px solid var(--primary); padding-left: 10px; }
-        ul { list-style: none; padding: 0; }
-        li { padding: 15px; border-radius: 8px; margin-bottom: 8px; background: #fff; border: 1px solid #eee; display: flex; flex-direction: column; cursor: pointer; transition: 0.2s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+        li { padding: 15px; border-radius: 12px; margin-bottom: 10px; background: #fff; border: 1px solid #eee; display: flex; flex-direction: column; cursor: pointer; transition: 0.2s; }
         li:hover { border-color: var(--primary); }
         li.done { background: #f9f9f9; opacity: 0.6; }
         li.done .task-name { text-decoration: line-through; }
         
-        .item-main { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-        .time { color: #888; font-size: 0.85rem; font-weight: bold; background: #eee; padding: 4px 8px; border-radius: 6px; }
+        .item-main { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 10px; }
+        .task-name { font-weight: 500; color: #333; font-size: 1rem; }
+        .time { color: #888; font-size: 0.75rem; font-weight: bold; background: #eee; padding: 4px 8px; border-radius: 6px; white-space: nowrap; }
         
         .map-btn { 
             display: inline-block;
-            margin-top: 8px;
+            margin-top: 10px;
             color: var(--maps); 
             text-decoration: none; 
             font-size: 0.75rem; 
             font-weight: bold; 
             border: 1px solid var(--maps); 
-            padding: 3px 8px; 
-            border-radius: 5px;
+            padding: 5px 10px; 
+            border-radius: 6px;
             width: fit-content;
         }
         .map-btn:hover { background: var(--maps); color: white; }
@@ -48,4 +49,38 @@
             </li>
             <li onclick="if(!event.target.closest('a')) this.classList.toggle('done')">
                 <div class="item-main">
-                    <span class="task
+                    <span class="task-name">Martina's Bakery</span> 
+                    <span class="time">09:30</span>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=Mārtiņa+Beķereja+Vaļņu+iela+28+Riga" target="_blank" class="map-btn">📍 Open Maps</a>
+            </li>
+        </ul>
+        
+        <div class="day-label">Saturday</div>
+        <ul>
+            <li onclick="if(!event.target.closest('a')) this.classList.toggle('done')">
+                <div class="item-main">
+                    <span class="task-name">Morning Yoga</span> 
+                    <span class="time">08:30</span>
+                </div>
+            </li>
+            <li onclick="if(!event.target.closest('a')) this.classList.toggle('done')">
+                <div class="item-main">
+                    <span class="task-name">Grocery Run</span> 
+                    <span class="time">11:00</span>
+                </div>
+            </li>
+        </ul>
+
+        <div class="day-label">Sunday</div>
+        <ul>
+            <li onclick="if(!event.target.closest('a')) this.classList.toggle('done')">
+                <div class="item-main">
+                    <span class="task-name">Walk in the Park</span> 
+                    <span class="time">15:00</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
