@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Agenda</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f9; display: flex; justify-content: center; padding: 20px; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 400px; width: 100%; }
+        h1 { color: #333; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .day { font-weight: bold; color: #5c67f2; margin-top: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        .time { color: #888; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Weekend Plans 🚀</h1>
+        
+        <div class="day">Saturday</div>
+        <ul>
+            <li><span>Breakfast & Coffee</span> <span class="time">09:00</span></li>
+            <li><span>Morning Hike</span> <span class="time">11:00</span></li>
+            <li><span>Movie Night</span> <span class="time">20:00</span></li>
+        </ul>
+
+        <div class="day">Sunday</div>
+        <ul>
+            <li><span>Farmers Market</span> <span class="time">10:00</span></li>
+            <li><span>Read/Relax</span> <span class="time">14:00</span></li>
+            <li><span>Meal Prep</span> <span class="time">17:00</span></li>
+        </ul>
+    </div>
+</body>
+</html>
