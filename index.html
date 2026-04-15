@@ -5,36 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend Agenda</title>
     <style>
-        :root { --primary: #5c67f2; --bg: #f4f4f9; }
+        :root { --primary: #5c67f2; --bg: #f4f4f9; --maps: #ea4335; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); display: flex; justify-content: center; padding: 20px; }
         .card { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); max-width: 450px; width: 100%; }
         h1 { color: #333; text-align: center; margin-bottom: 25px; font-size: 1.5rem; }
         .day-label { font-weight: 800; color: var(--primary); margin-top: 25px; margin-bottom: 10px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; border-left: 4px solid var(--primary); padding-left: 10px; }
         ul { list-style: none; padding: 0; }
-        li { padding: 15px; border-radius: 8px; margin-bottom: 8px; background: #fff; border: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: 0.2s; }
+        li { padding: 15px; border-radius: 8px; margin-bottom: 8px; background: #fff; border: 1px solid #eee; display: flex; flex-direction: column; cursor: pointer; transition: 0.2s; }
         li:hover { border-color: var(--primary); }
         li.done { background: #f9f9f9; opacity: 0.6; }
-        li.done span { text-decoration: line-through; }
+        li.done .task-name { text-decoration: line-through; }
+        
+        .item-main { display: flex; justify-content: space-between; align-items: center; width: 100%; }
         .time { color: #888; font-size: 0.85rem; font-weight: bold; background: #eee; padding: 4px 8px; border-radius: 6px; }
+        
+        .map-btn { 
+            display: inline-block;
+            margin-top: 8px;
+            color: var(--maps); 
+            text-decoration: none; 
+            font-size: 0.75rem; 
+            font-weight: bold; 
+            border: 1px solid var(--maps); 
+            padding: 3px 8px; 
+            border-radius: 5px;
+            width: fit-content;
+        }
+        .map-btn:hover { background: var(--maps); color: white; }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Weekend Agenda 🚀</h1>
-        
-        <div class="day-label">Saturday</div>
-        <ul>
-            <li onclick="this.classList.toggle('done')"><span>Morning Yoga</span> <span class="time">08:30</span></li>
-            <li onclick="this.classList.toggle('done')"><span>Grocery Run</span> <span class="time">11:00</span></li>
-            <li onclick="this.classList.toggle('done')"><span>Dinner Party</span> <span class="time">19:00</span></li>
-        </ul>
+        <h1>Konkkakaronkka Riga 🚀</h1>
 
-        <div class="day-label">Sunday</div>
+        <div class="day-label">Friday</div>
         <ul>
-            <li onclick="this.classList.toggle('done')"><span>Sleep In</span> <span class="time">--:--</span></li>
-            <li onclick="this.classList.toggle('done')"><span>Walk in the Park</span> <span class="time">15:00</span></li>
-            <li onclick="this.classList.toggle('done')"><span>Weekly Review</span> <span class="time">21:00</span></li>
-        </ul>
-    </div>
-</body>
-</html>
+            <li onclick="if(!event.target.closest('a')) this.classList.toggle('done')">
+                <div class="item-main">
+                    <span class="task-name">Lento HKI-RIGA 7:00</span> 
+                    <span class="time">07:00-08:10</span>
+                </div>
+            </li>
+            <li onclick="if(!event.target.closest('a')) this.classList.toggle('done')">
+                <div class="item-main">
+                    <span class="task
